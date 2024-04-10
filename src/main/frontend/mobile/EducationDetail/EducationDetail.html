@@ -1,0 +1,65 @@
+<div style="margin: 15px; text-align: center;">
+    <style>
+        .add-space {
+            margin-top: 10px;
+        }
+
+        .field-width {
+            width: 200px;
+        }
+
+        .local-grid {
+            display: grid;
+            grid-template-columns: max-content max-content;
+            grid-column-gap: 10px;
+            grid-row-gap: 20px;
+            width: 393px;
+            margin-top: 20px;
+        }
+
+        .local-grid span {
+            align-self: center;
+            text-align: right;
+        }
+
+    </style>
+
+    <h1 id="company-name"></h1>
+    <h2>Education Detail</h2>
+    <div style="text-align: left; display: inline-block;">
+        <div class="local-grid">
+
+            <span>School:</span>
+            <text-input id="school-name" class="field-width" maxlength="80" fixcap required></text-input>
+
+            <span>Major:</span>
+            <text-input id="subject" class="field-width" maxlength="60" fixcap></text-input>
+
+            <span>End date:</span>
+            <native-date-input id="end-date" style="width: 120px;"></native-date-input>
+
+            <span>Present:</span>
+            <check-box id="current" style="position: relative; top: -3px;"></check-box>
+
+            <span>Location:</span>
+            <text-input id="school-location" class="field-width" maxlength="120"></text-input>
+
+            <span>Graduate?</span>
+            <div>
+                <radio-button group="graduate" value="N">No</radio-button>
+                <radio-button group="graduate" value="Y">Yes</radio-button>
+            </div>
+
+            <span>GPA:</span>
+            <numeric-input id="gpa" style="width: 40px;" max="5" decimal-places="1"></numeric-input>
+
+        </div>
+
+    </div>
+
+    <div style="margin-top: 20px;">
+        <push-button id="cancel">Cancel</push-button>
+        <push-button id="save" style="margin-left: 20px;">Save</push-button>
+    </div>
+
+</div>

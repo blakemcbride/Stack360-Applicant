@@ -1,0 +1,55 @@
+<div style="margin: 15px; text-align: center;">
+    <style>
+        .add-space {
+            margin-top: 10px;
+        }
+
+        .field-width {
+            width: 200px;
+        }
+
+        .local-grid {
+            display: grid;
+            grid-template-columns: max-content max-content;
+            grid-column-gap: 10px;
+            grid-row-gap: 20px;
+            width: 393px;
+            margin-top: 20px;
+        }
+
+        .local-grid span {
+            align-self: center;
+            text-align: right;
+        }
+
+    </style>
+
+    <h1 id="company-name"></h1>
+    <h2>Document Upload</h2>
+
+    <div>
+        <list-box id="document-list" style="height: 200px; width: 300px;"></list-box>
+    </div>
+
+    <div style="margin-top: 20px;">
+        <push-button id="back">Back</push-button>
+        <push-button id="add" style="margin-left: 20px;">Add</push-button>
+    </div>
+
+    <popup id="document-details" height="150px" width="320px">
+        <popup-title>Document Details</popup-title>
+        <popup-body style="text-align: left;">
+            <div style="margin-top: 10px;">
+                <span>Description:</span>
+                <text-input id="comments" style="width: 200px;" maxlength="255" required></text-input>
+            </div>
+            <div style="margin-top: 20px;">
+                <file-upload id="the-file" required></file-upload>
+            </div>
+            <div style="margin-top: 30px; text-align: center;">
+                <push-button id="cancel">Cancel</push-button>
+                <push-button id="upload" style="margin-left: 20px;">Upload</push-button>
+            </div>
+        </popup-body>
+    </popup>
+</div>

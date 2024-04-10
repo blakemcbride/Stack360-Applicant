@@ -1,0 +1,58 @@
+<div style="margin: 15px; text-align: center;">
+    <style>
+        .add-space {
+            margin-top: 10px;
+        }
+
+        .field-width {
+            width: 200px;
+        }
+
+        .local-grid {
+            display: grid;
+            grid-template-columns: max-content max-content;
+            grid-column-gap: 10px;
+            grid-row-gap: 20px;
+            width: 393px;
+            margin-top: 20px;
+        }
+
+        .local-grid span {
+            align-self: center;
+            text-align: right;
+        }
+
+    </style>
+
+    <h1 id="company-name"></h1>
+    <h2>Agreement</h2>
+    <div style="text-align: left; display: inline-block;">
+
+        <div style="margin-top: 20px; font-weight: bold;">
+            Please read carefully before signing.
+        </div>
+
+        <div id="agreement-text" style="margin-top: 20px;"></div>
+
+        <div style="margin-top: 20px;">
+            <check-box id="agrees">I have reviewed all the information listed on this application, and I hereby accept these terms.</check-box>
+        </div>
+
+
+        <div style="margin-top: 20px;">
+            Your name:
+            <text-input id="agreement-name" style="width: 200px; margin-left: 10px;" minlength="3" maxlength="50"></text-input>
+        </div>
+
+
+        <div style="margin-top: 20px;">
+            Today's date:
+            <native-date-input id="agreement-date" style="width: 120px; margin-left: 10px;" disabled></native-date-input>
+        </div>
+
+    </div>
+    <div style="margin-top: 20px;">
+        <push-button id="cancel">Cancel</push-button>
+        <push-button id="accept" style="margin-left: 20px;">Accept</push-button>
+    </div>
+</div>

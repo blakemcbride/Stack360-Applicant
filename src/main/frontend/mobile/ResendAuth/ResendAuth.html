@@ -1,0 +1,41 @@
+<div style="margin: 10px;">
+    <style>
+        .add-space {
+            margin-top: 10px;
+        }
+
+        .field-width {
+            width: 200px;
+        }
+    </style>
+    <div style="text-align: center;">
+        <h2>Resend Authentication</h2>
+    </div>
+    <div>
+        This screen is where you request us to re-send the Authentication Code to your email address.
+    </div>
+    <div style="margin-top: 15px;">
+        Please enter your email address, and we will re-send the Authentication Code to your email address.
+    </div>
+    <div style="margin-top: 15px;">
+        Possible reasons why you may not have received it before include the following.
+        <ol>
+            <li>You didn't go through the <b>Create Login</b> process yet.  If not, please cancel this screen and go to <b>Create Login</b></li>
+            <li class="add-space">If you did go through the <b>Create Login</b> process but didn't receive an Authentication Code in your email, the following lists the possible causes: </li>
+            <ol type="a">
+                <li class="add-space">The email went into your spam folder.  Please check it.</li>
+                <li class="add-space">You provided the wrong email address.  In that case, just re-apply.</li>
+                <li class="add-space">You missed it for some other reason.  This screen will allow you to re-send it to your email account.</li>
+            </ol>
+        </ol>
+    </div>
+    <div class="grid2">
+        <span>Your Email Address:</span>
+        <text-input class="field-width"></text-input>
+    </div>
+
+    <div style="text-align: center; margin-top: 30px;">
+        <push-button id="cancel">Cancel</push-button>
+        <push-button id="resend" style="margin-left: 20px;">Re-send</push-button>
+    </div>
+</div>

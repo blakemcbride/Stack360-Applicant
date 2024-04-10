@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<project name="Stack360" basedir=".">
+
+    <target name="configDemo">
+        <delete file="src/main/frontend/WTG MERCH LOGO.png"/>
+        <copy todir="src/main/frontend" overwrite="true">
+            <fileset dir="WhiteLabel/Demo">
+                <include name="index.js"/>
+                <include name="stack360-logo-v2-25.png"/>
+            </fileset>
+        </copy>
+        <copy todir="src/main/frontend/mobile" overwrite="true">
+            <fileset dir="WhiteLabel/Demo">
+                <include name="login.html"/>
+            </fileset>
+        </copy>
+    </target>
+
+    <target name="configWayToGo">
+        <delete file="src/main/frontend/stack360-logo-v2-25.png"/>
+        <copy todir="src/main/frontend" overwrite="true">
+            <fileset dir="WhiteLabel/WayToGo">
+                <include name="index.js"/>
+                <include name="WTG MERCH LOGO.png"/>
+            </fileset>
+        </copy>
+        <copy todir="src/main/frontend/mobile" overwrite="true">
+            <fileset dir="WhiteLabel/WayToGo">
+                <include name="login.html"/>
+            </fileset>
+        </copy>
+    </target>
+
+</project>

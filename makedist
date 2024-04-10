@@ -1,0 +1,6 @@
+#
+rm -f ../Stack360Apply.tar.gz Stack360Apply.jar
+pushd src/main/frontend
+jar cf ../../../Stack360Apply.jar *
+popd
+#scp Stack360Apply.tar.gz ubuntu@wtg:

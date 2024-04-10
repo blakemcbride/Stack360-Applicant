@@ -1,0 +1,10 @@
+
+Making a distribution
+
+./makedist
+
+scp Stack360Apply.tar.gz root@wtg:
+Update server path in index.js
+Update softwareVersion and controlCache in index.html
+
+

@@ -1,0 +1,94 @@
+<div style="margin: 15px; text-align: center;">
+    <style>
+        .add-space {
+            margin-top: 10px;
+        }
+
+        .field-width {
+            width: 200px;
+        }
+
+        .local-grid {
+            display: grid;
+            grid-template-columns: max-content max-content;
+            grid-column-gap: 10px;
+            grid-row-gap: 20px;
+            width: 393px;
+            margin-top: 20px;
+        }
+
+        .local-grid span {
+            align-self: center;
+            text-align: right;
+        }
+
+    </style>
+
+    <h1 id="company-name"></h1>
+    <h2>Personal Information</h2>
+    <div style="text-align: left; display: inline-block;">
+        <div class="local-grid">
+            <span>First name:</span>
+            <text-input id="fname" style="width: 200px;" maxlength="30" fixcap required></text-input>
+
+            <span>Middle name:</span>
+            <text-input id="mname" style="width: 200px;" maxlength="20" fixcap></text-input>
+
+            <span>Last name:</span>
+            <text-input id="lname" style="width: 200px;" maxlength="30" fixcap required></text-input>
+
+            <span>Referred by:</span>
+            <text-input id="referred-by" style="width: 200px;" maxlength="40" fixcap></text-input>
+
+            <span>Street:</span>
+            <text-input id="street" style="width: 200px;" maxlength="60" fixcap></text-input>
+
+            <span>City:</span>
+            <text-input id="city" style="width: 200px;" maxlength="60" fixcap></text-input>
+
+            <span>State:</span>
+            <text-input id="state" style="width: 40px;" maxlength="2" upcase></text-input>
+
+            <span>Zip code:</span>
+            <text-input id="zip" style="width: 200px;" maxlength="10"></text-input>
+
+            <span>Email address:</span>
+            <text-input id="email" style="width: 200px;" maxlength="60" required></text-input>
+
+            <div style="display: inline-block; width: 100px; position: relative; top: -6px; text-align: right;">
+                <span>Social security number:</span>
+            </div>
+            <text-input id="ssan" style="width: 200px;" maxlength="11"></text-input>
+
+            <span>Date of birth:</span>
+            <native-date-input id="dob" style="width: 120px;" min="19300101" max="20201231"></native-date-input>
+
+            <div style="display: inline-block; width: 100px; position: relative; top: -6px; text-align: right;">
+                <span>Primary phone number:</span>
+            </div>
+            <text-input id="phone-number" style="width: 200px;" maxlength="20"></text-input>
+
+            <div style="display: inline-block; width: 100px; position: relative; top: -6px; text-align: right;">
+                <span>Emergency contact:</span>
+            </div>
+            <text-input id="emergency-contact" style="width: 200px;" maxlength="45" fixcap></text-input>
+
+            <span>Relationship:</span>
+            <drop-down id="relationship" style="width: 200px;">
+                <option value="">(select)</option>
+                <option value="S">Spouse</option>
+                <option value="P">Parent</option>
+                <option value="C">Child</option>
+                <option value="O">Other</option>
+            </drop-down>
+
+            <span>Contact phone:</span>
+            <text-input id="contact-phone" style="width: 200px;" maxlength="20"></text-input>
+        </div>
+
+    </div>
+    <div style="margin-top: 20px;">
+        <push-button id="cancel" style="margin-right: 20px;">Cancel</push-button>
+        <push-button id="save">Save</push-button>
+    </div>
+</div>

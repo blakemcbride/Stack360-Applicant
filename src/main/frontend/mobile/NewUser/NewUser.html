@@ -1,0 +1,72 @@
+<div style="margin: 10px; text-align: center;">
+    <style>
+        .add-space {
+            margin-top: 10px;
+        }
+
+        .field-width {
+            width: 200px;
+        }
+
+        .local-grid {
+            display: grid;
+            grid-template-columns: 100px max-content;
+            grid-column-gap: 10px;
+            grid-row-gap: 10px;
+        }
+
+        .local-grid span {
+            align-self: center;
+            text-align: right;
+        }
+    </style>
+    <div style="display: inline-block;">
+        <div style="text-align: center;">
+            <h2>Create Login</h2>
+        </div>
+        <div style="text-align: left; display: inline-block;">
+            <div id="thank-you"></div>
+            <div style="margin-top: 15px;">
+                Creating a login into our Applicant Portal involves the following steps:
+                <ol>
+                    <li>You fill out this screen with your name, email address, and phone number.</li>
+                    <li class="add-space">We will send you an email verifying your email address.</li>
+                    <li class="add-space">You click on the link in that email to continue.</li>
+                </ol>
+            </div>
+            <div class="local-grid" style="margin-left: 20px; grid-row-gap: 20px;">
+                <span>First name:</span>
+                <text-input id="first-name" class="field-width" maxlength="30" fixcap required></text-input>
+
+                <span>Middle name:</span>
+                <text-input id="middle-name" class="field-width" maxlength="20" fixcap></text-input>
+
+                <span>Last name:</span>
+                <text-input id="last-name" class="field-width" maxlength="30" fixcap required></text-input>
+
+                <span>Email:</span>
+                <text-input id="email" class="field-width" minlength="7" maxlength="50" autocomplete="off"></text-input>
+
+                <span>Mobile phone:</span>
+                <text-input id="phone" class="field-width" minlength="10" maxlength="12"></text-input>
+            </div>
+
+            <div style="margin-top: 20px;">
+                <span>Do you authorize us to send email messages to you?</span>
+                <radio-button group="email-auth" value="Y">Yes</radio-button>
+                <radio-button group="email-auth" value="N" checked>No</radio-button>
+            </div>
+
+            <div style="margin-top: 20px;">
+                <span>Do you authorize us to send text messages to you?</span>
+                <radio-button group="text-auth" value="Y">Yes</radio-button>
+                <radio-button group="text-auth" value="N" checked>No</radio-button>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px; margin-bottom: 100px;">
+                <push-button id="cancel">Cancel</push-button>
+                <push-button id="create-login" style="margin-left: 20px;">Create Login</push-button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,83 @@
+<div style="margin: 15px; text-align: center;">
+    <style>
+        .add-space {
+            margin-top: 10px;
+        }
+
+        .field-width {
+            width: 200px;
+        }
+
+        .local-grid {
+            display: grid;
+            grid-template-columns: max-content max-content;
+            grid-column-gap: 10px;
+            grid-row-gap: 20px;
+            width: 393px;
+            margin-top: 20px;
+        }
+
+        .local-grid span {
+            align-self: center;
+            text-align: right;
+        }
+
+    </style>
+
+    <h1 id="company-name"></h1>
+    <h2>Employment Detail</h2>
+    <div style="text-align: left; display: inline-block;">
+        <div class="local-grid">
+
+            <span>Company name:</span>
+            <text-input id="company" class="field-width" maxlength="60" fixcap required></text-input>
+
+            <span>Phone number:</span>
+            <text-input id="phone" class="field-width" maxlength="20"></text-input>
+
+            <span>Street:</span>
+            <text-input id="street" class="field-width" maxlength="45" fixcap></text-input>
+
+            <span>City:</span>
+            <text-input id="city" class="field-width" maxlength="20" fixcap></text-input>
+
+            <span>State:</span>
+            <text-input id="state" style="width: 40px;" maxlength="2" upcase></text-input>
+
+            <span>Position title:</span>
+            <text-input id="job-title" class="field-width" maxlength="40" fixcap></text-input>
+
+        </div>
+
+        <div style="margin-top: 20px;">Description, duties, and responsibilities:</div>
+        <div><textbox-input id="responsibilities" style="width: 300px; height: 200px;" maxlength="1500"></textbox-input></div>
+
+        <div class="local-grid">
+            <span>Start date:</span>
+            <native-date-input id="start-date" style="width: 120px;"></native-date-input>
+
+            <span>End date:</span>
+            <native-date-input id="end-date" style="width: 120px;"></native-date-input>
+
+            <span>Supervisor name:</span>
+            <text-input id="supervisor" class="field-width" maxlength="40"></text-input>
+
+            <span>May we contact?</span>
+            <div>
+                <radio-button group="contact-supervisor" value="N" checked>No</radio-button>
+                <radio-button group="contact-supervisor" value="Y">Yes</radio-button>
+                <radio-button group="contact-supervisor" value="L">Later</radio-button>
+            </div>
+        </div>
+
+        <div style="margin-top: 20px;">Reason for leaving:</div>
+        <div><textbox-input id="reason-for-leaving" style="width: 300px; height: 150px;" maxlength="120"></textbox-input></div>
+
+    </div>
+
+    <div style="margin-top: 20px;">
+        <push-button id="cancel">Cancel</push-button>
+        <push-button id="save" style="margin-left: 20px;">Save</push-button>
+    </div>
+
+</div>

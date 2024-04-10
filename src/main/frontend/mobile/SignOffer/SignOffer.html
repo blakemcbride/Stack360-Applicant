@@ -1,0 +1,36 @@
+<div style="margin: 15px; text-align: center;">
+    <h1 id="company-name"></h1>
+    <h2>Job Offer</h2>
+
+    <div>
+        <span style="font-weight: bold;">Instructions:</span> Read the following offer.  You may accept or decline the offer at the bottom.
+    </div>
+
+    <div id="offer" style="text-align: left; display: inline-block; font-size: large;">
+
+    </div>
+    <div style="margin-top: 20px;">
+        <push-button id="logout">Logout</push-button>
+        <push-button id="decline" style="margin-left: 20px;">Decline</push-button>
+        <push-button id="accept" style="margin-left: 20px;">Accept</push-button>
+    </div>
+
+</div>
+
+<popup id="accept-popup" height="185px" width="320px">
+    <popup-title>Electronic Signature</popup-title>
+    <popup-body>
+        <div style="margin: 10px; font-weight: bold;">By accepting this offer, you are hereby agreeing to the terms of the offer.</div>
+        <div class="vert-input" style="margin-top: 15px;">
+            <span>Date:</span>
+            <date-input id="ap-date" style="width: 100px;" disabled></date-input>
+
+            <span>Signature:</span>
+            <text-input id="ap-signature" style="width: 200px;" required maxlength="40"></text-input>
+        </div>
+        <div style="margin-top: 25px; margin-left: 50px;">
+            <push-button id="ap-cancel">Cancel</push-button>
+            <push-button id="ap-accept" style="margin-left: 20px;">Accept Offer</push-button>
+        </div>
+    </popup-body>
+</popup>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <!-- Applicant Interface
+       Copyright 2022 STACK360 LLC
+       See:  stack360.io
+
+       System built utilizing the Kiss Web Development Framework (kissweb.org)
+       -->
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel='shortcut icon' href='Stack360_tab-icon-13.png' type='image/x-icon'/>
+
+    <link rel="stylesheet" href="normalize.css?nocache=20230813">
+    <link rel="stylesheet" href="normalize2.css?nocache=20230813">
+
+    <link rel="stylesheet" href="kiss/Utils.css?nocache=20230813">
+
+    <!-- <link rel="stylesheet" href="lib/ag-grid.min.css">
+    <link rel="stylesheet" href="lib/ag-theme-balham.min.css"> -->
+
+
+    <style>
+
+        html, body {
+            width: 100%;
+            box-sizing: border-box;
+            background-color: #b7e4ff;
+        }
+
+        label {
+            margin-top: 3px;
+        }
+
+        .center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+        }
+
+        input[type=button], input[type=checkbox], input[type=radio], select {
+            cursor: pointer;
+        }
+
+        .grid2 {
+            display: grid;
+            grid-template-columns: max-content max-content;
+            grid-column-gap: 10px;
+            grid-row-gap: 10px;
+        }
+
+        .grid2 span {
+            align-self: center;
+            text-align: right;
+        }
+
+    </style>
+
+    <script>
+        // cache control
+        const softwareVersion = "20201108";   // version of the entire system
+        const controlCache = true;            // normally true but use false during debugging
+
+        /**
+         * Load a JavaScript file
+         */
+        function getScript(url) {
+            return new Promise(function (resolve, reject) {
+                const head = document.getElementsByTagName("head")[0];
+                const script = document.createElement("script");
+                script.type = "text/javascript";
+                script.src = url + (controlCache ? '?ver=' + softwareVersion : '');
+
+                // Handle Script loading
+                {
+                    let done = false;
+
+                    // Attach handlers for all browsers
+                    script.onload = script.onreadystatechange = function () {
+                        if (!done && (!this.readyState ||  this.readyState === "loaded" || this.readyState === "complete")) {
+                            done = true;
+                            // Handle memory leak in IE
+                            script.onload = script.onreadystatechange = null;
+                            resolve();
+                        } else {
+                            console.log("getScript:  error loading " + url);
+                            reject();
+                        }
+                    };
+                    script.onerror = function () {
+                        console.log("getScript: error loading " + url);
+                        reject();
+                    };
+                }
+                head.appendChild(script);
+            });
+        }
+
+        function getURLParameter(sParam) {
+            const urlArgs = window.location.search.substring(1);
+            const argArray = urlArgs.split('&');
+            for (let i = 0; i < argArray.length; i++)  {
+                let param = argArray[i].split('=');
+                if (param[0] === sParam)
+                    return param[1];
+            }
+            return undefined;
+        }
+
+        function startup() {
+
+            const afterLoad = function () {
+                Utils.softwareVersion = softwareVersion;
+                Utils.controlCache = controlCache;
+                Utils.auth = getURLParameter("auth");
+                Utils.user = getURLParameter("user");
+                loadScript("index.js", function () {
+                    // do nothing
+                });
+            };
+
+            let numLoaded = 0;
+
+            const loadScript = function (script, fun) {
+                if (fun)
+                    getScript(script).then(fun);
+                else {
+                    numLoaded++;
+                    getScript(script).then(function () {
+                        if (!--numLoaded)
+                            afterLoad();
+                    });
+                }
+            };
+
+            const loadUtils = function () {
+                loadScript("scripts/Utils.js");
+                loadScript("kiss/DateUtils.js");
+                loadScript("kiss/DateTimeUtils.js");
+                loadScript("kiss/TimeUtils.js");
+                loadScript("kiss/NumberUtils.js");
+                loadScript("scripts/Server.js");
+                //loadScript("kiss/AGGrid.js");
+
+                loadScript("lib/xml2js.min.js");
+                loadScript("scripts/AWS.js");
+                loadScript("scripts/Framework.js");
+            };
+
+            $.ajaxSetup({ cache: controlCache });  // utilize browser cache to the fullest when version hasn't changed
+
+            if (controlCache) {
+                const now = getURLParameter("now");
+                let urlArgs = window.location.search.substring(1);
+                if (now) {
+                    const diff = Math.abs(((new Date()).getTime() - Number(now)) / 1000);
+                    if (diff > 30) {
+                        window.onbeforeunload = null;
+                        urlArgs = urlArgs.replaceAll(/now=[^&]*&*/g, '');
+                        window.location.href = 'index.html?now=' + (new Date()).getTime() + (urlArgs ? '&' + urlArgs : '');
+                    } else {
+                        loadUtils();
+                    }
+                } else {
+                    window.onbeforeunload = null;
+                    window.location.href = 'index.html?now=' + (new Date()).getTime() + (urlArgs ? '&' + urlArgs : '');
+                }
+            } else
+                loadUtils();
+        }
+
+    </script>
+
+</head>
+
+<body onload="startup()">
+
+<script src="lib/jquery-3.4.1.min.js"></script>
+<!-- <script src="lib/ag-grid-community.noStyle.min.js?nocache=20230813"></script> -->
+
+</body>
+
+</html>
