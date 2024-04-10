@@ -10,7 +10,21 @@ format is not as appealing.
 
 Like the desktop interface, this interface, from the perspective of
 the web server, is a separate web application independent of the other
-Stack360 components.  
+Stack360 components. 
+
+## Development Environment
+
+Before this front-end will work, the back-end must be running.
+
+Use the following command to start the applicant front-end:
+
+```
+./serve               (Windows:  serve)
+```
+
+You can then go to your browser at `http://localhost:8000`
+
+## Deployment
 
 This interface communicates with the Stack360 back-end via
 web services.  As such, when it is deployed, it must be modified
