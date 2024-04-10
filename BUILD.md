@@ -26,6 +26,17 @@ You can then go to your browser at `http://localhost:8000`
 
 ## Deployment
 
+The single file needed for deployment can be created with the
+following command:
+
+```
+./makedist       (Windows:  makedist)
+```
+
+This will create the file named `Stack360Apply.jar` That is the only
+file you need for deployment.  On the production server it gets
+treated as a separate web application.
+
 This interface communicates with the Stack360 back-end via
 web services.  As such, when it is deployed, it must be modified
 to point to the correct URL of the Stack360 back-end.  This is
