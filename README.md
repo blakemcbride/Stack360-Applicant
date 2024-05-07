@@ -61,8 +61,6 @@ The complete source code of Stack360 is now available under the GNU
 General Public License Version 3, inviting developers and businesses
 to contribute to and benefit from this powerful tool.
 
-### Full System Documentation
-
 ### Docker Image
 
 We also have the full system available as a docker image at
