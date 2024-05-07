@@ -63,10 +63,6 @@ to contribute to and benefit from this powerful tool.
 
 ### Full System Documentation
 
-Through [Amazon](https://amazon.com/dp/B0D1245Q1F), we published the "Stack360
-System Manual".  This manual documents the architecture of the system,
-acts as a developer guide, and covers system configuration.
-
 ### Docker Image
 
 We also have the full system available as a docker image at
@@ -78,19 +74,26 @@ intended to be of value for development or production use.  This repo
 is for that.
 
 
+### Getting Started
+
+This system requires the Stack360 Backend and Frontend.
+
+See the file named *Stack360-build-guide.pdf* in the Stack360 back-end repo located at
+[https://github.com/blakemcbride/Stack360-Backend](https://github.com/blakemcbride/Stack360-Backend)
+
+For instructions particular to this front-end, see *BUILD.md* (in this repo).
+
+Also, through Amazon, we published the 
+[Stack360 System Manual](https://amazon.com/dp/B0D1245Q1F).  
+This manual documents the architecture of the system,
+acts as a developer guide, and covers system configuration.
+
 ### Commercial Support and Licensing:
 
 For those seeking commercial support or a commercial license, please
 don't hesitate to reach out. We're here to assist you in integrating
 Stack360 into your business seamlessly.  See our website at
 [stack360.io](https://stack360.io)
-
-### Getting Started
-
-See the file named *Stack360-build-guide.pdf* in the Stack360 back-end repo located at
-[https://github.com/blakemcbride/Stack360-Backend](https://github.com/blakemcbride/Stack360-Backend)
-
-For instructions particular to this front-end, see *BUILD.md* (in this repo).
 
 ### Join the Stack360 Community
 
