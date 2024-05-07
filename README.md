@@ -74,7 +74,8 @@ is for that.
 
 ### Getting Started
 
-This system requires the Stack360 Backend and Frontend.
+This system requires the Stack360 [Backend](https://github.com/blakemcbride/Stack360-Backend) 
+and [Frontend](https://github.com/blakemcbride/Stack360-Frontend).
 
 See the file named *Stack360-build-guide.pdf* in the Stack360 back-end repo located at
 [https://github.com/blakemcbride/Stack360-Backend](https://github.com/blakemcbride/Stack360-Backend)
